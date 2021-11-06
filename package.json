@@ -1,0 +1,28 @@
+{
+  "name": "leetcode-tasks",
+  "version": "1.0.0",
+  "description": "Solving tasks taking from leetcode resource",
+  "private": true,
+  "scripts": {
+    "test:ci": "jest --watchAll=false",
+    "test:watch": "jest --watchAll=true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corocoto/leetcode-tasks.git"
+  },
+  "keywords": [
+    "leetcode",
+    "algorithms"
+  ],
+  "author": "corocoto <gusev2014russia@mail.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corocoto/leetcode-tasks/issues"
+  },
+  "homepage": "https://github.com/corocoto/leetcode-tasks#readme",
+  "devDependencies": {
+    "jest": "^27.3.1",
+    "jest-watch-typeahead": "^1.0.0"
+  }
+}
