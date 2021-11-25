@@ -1,7 +1,7 @@
 {
-  "name": "leetcode-tasks",
+  "name": "algorithm-tasks",
   "version": "1.0.0",
-  "description": "Solving tasks taking from leetcode resource",
+  "description": "Solving algorithm tasks taking from various resources",
   "private": true,
   "scripts": {
     "test:ci": "jest --watchAll=false",
@@ -13,7 +13,8 @@
   },
   "keywords": [
     "leetcode",
-    "algorithms"
+    "algorithms",
+    "freeCodeCamp"
   ],
   "author": "corocoto <gusev2014russia@mail.ru>",
   "license": "ISC",
