@@ -1,2 +1,2 @@
-# leetcode-tasks
-Solving tasks taking from leetcode resource
+# Algorithm tasks
+Solving algorithm tasks taking from various resources
