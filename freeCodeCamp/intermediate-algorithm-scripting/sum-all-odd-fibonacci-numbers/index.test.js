@@ -1,10 +1,6 @@
 const sumFibs = require('./index');
 
 describe('`sumFibs` function', () => {
-    it('`sumFibs(1)` should return a number', () => {
-        expect(typeof sumFibs(1)).toEqual('number');
-    });
-
     it('`sumFibs(1)` should return 2', () => {
         expect(sumFibs(1)).toEqual(2);
     });
