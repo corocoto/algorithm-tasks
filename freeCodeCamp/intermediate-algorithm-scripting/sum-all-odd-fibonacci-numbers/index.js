@@ -14,5 +14,3 @@ function sumFibs(num) {
 }
 
 module.exports = sumFibs;
-
-console.log(sumFibs(1));
