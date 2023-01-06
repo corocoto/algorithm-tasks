@@ -13,12 +13,11 @@ var findDisappearedNumbers = function(nums) {
             i++;
         }
     }
-    const result = [];
-    for (let i = 0; i < numsLength; i++) {
-        if (nums[i] !== i + 1) {
-            result.push(i + 1);
+
+    return nums.reduce((acc, num, index) => {
+        if(num !== index + 1) {
+            acc.push(index + 1)
         }
-    }
-    return result;
+        return acc;
+    }, []);
 };
-console.log(findDisappearedNumbers([1,1]));
