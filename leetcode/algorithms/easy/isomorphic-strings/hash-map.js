@@ -16,6 +16,10 @@ var isIsomorphic = function(s, t) {
         const sCharIndexes = sMap.get(sChar) ?? [];
         const tCharIndexes = tMap.get(tChar) ?? [];
 
+        if (JSON.stringify(sCharIndexes) !== JSON.stringify(tCharIndexes)) {
+            return false;
+        }
+
         sCharIndexes.push(i);
         tCharIndexes.push(i);
 
@@ -23,14 +27,5 @@ var isIsomorphic = function(s, t) {
         tMap.set(tChar, tCharIndexes);
     }
 
-    for (const [sChar, sCharIndexes] of sMap) {
-        for (const [tChar, tCharIndexes] of tMap) {
-            if (JSON.stringify(sCharIndexes) === JSON.stringify(tCharIndexes)) {
-                tMap.delete(tChar);
-                break;
-            }
-        }
-    }
-
-    return tMap.size === 0
+    return true;
 };
