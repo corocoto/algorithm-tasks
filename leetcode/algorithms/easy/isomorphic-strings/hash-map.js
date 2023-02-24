@@ -13,25 +13,19 @@ var isIsomorphic = function(s, t) {
         const sChar = s[i];
         const tChar = t[i];
 
-        const sCharValue = sMap.get(sChar) ?? { count: 0, indexes: [] };
-        const tCharValue = tMap.get(tChar) ?? { count: 0, indexes: [] };
+        const sCharIndexes = sMap.get(sChar) ?? [];
+        const tCharIndexes = tMap.get(tChar) ?? [];
 
-        sCharValue.count += 1;
-        sCharValue.indexes.push(i);
+        sCharIndexes.push(i);
+        tCharIndexes.push(i);
 
-        tCharValue.count += 1;
-        tCharValue.indexes.push(i);
-
-        sMap.set(sChar, sCharValue);
-        tMap.set(tChar, tCharValue);
+        sMap.set(sChar, sCharIndexes);
+        tMap.set(tChar, tCharIndexes);
     }
 
-    for (const [sChar, sCharValue] of sMap) {
-        for (const [tChar, tCharValue] of tMap) {
-            if (
-                sCharValue.count === tCharValue.count && 
-                JSON.stringify(sCharValue.indexes) === JSON.stringify(tCharValue.indexes)
-            ) {
+    for (const [sChar, sCharIndexes] of sMap) {
+        for (const [tChar, tCharIndexes] of tMap) {
+            if (JSON.stringify(sCharIndexes) === JSON.stringify(tCharIndexes)) {
                 tMap.delete(tChar);
                 break;
             }
