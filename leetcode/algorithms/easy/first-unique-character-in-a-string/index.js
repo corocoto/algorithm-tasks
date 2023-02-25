@@ -5,16 +5,15 @@
  * @return {number}
  */
 var firstUniqChar = function(s) {
-    let i = 0;
-    const hashMap = new Map();
-    for(; i < s.length; i++) {
-        const count = (hashMap.get(s[i]) ?? 0) + 1;
-        hashMap.set(s[i], count);
+    const charsMap = new Map();
+    for(let i = 0; i < s.length; i++) {
+        const count = (charsMap.get(s[i]) ?? 0) + 1;
+        charsMap.set(s[i], count);
     }
 
-    for (i = 0; i < s.length; i++) {
-        if (hashMap.get(s[i]) === 1) {
-            return i
+    for (const [char, count] of charsMap) {
+        if (count === 1) {
+            return s.indexOf(char);
         }
     }
     return -1;
