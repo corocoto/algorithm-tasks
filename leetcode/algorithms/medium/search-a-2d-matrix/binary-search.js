@@ -15,18 +15,18 @@ var searchMatrix = function(matrix, target) {
     
     while (left <= right) {
         const mid = Math.floor((left + right) / 2);
-        const midColumn = Math.floor(mid / n);
-        const midRow = Math.floor(mid % n);
+        const midRow = Math.floor(mid / n);
+        const midColumn = Math.floor(mid % n);
 
-        if(matrix[midColumn][midRow] === target) {
+        if(matrix[midRow][midColumn] === target) {
             return true
         }
 
-        if (matrix[midColumn][midRow] > target) {
+        if (matrix[midRow][midColumn] > target) {
             right = mid - 1;
         }
 
-        if (matrix[midColumn][midRow] < target) {
+        if (matrix[midRow][midColumn] < target) {
             left = mid + 1;
         }
     }
